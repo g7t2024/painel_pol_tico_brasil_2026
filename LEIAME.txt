@@ -1,0 +1,4 @@
+Congresso 2027 - pagina unica sobre as eleicoes 2026.
+Abra index.html no navegador. Nao precisa de servidor nem instalacao.
+Edite os numeros em data.js; a logica dos graficos fica em app.js e o visual em styles.css.
+As fontes (Google Fonts) carregam pela internet; sem conexao, usa fontes do sistema.

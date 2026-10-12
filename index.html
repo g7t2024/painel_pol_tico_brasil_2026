@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Congresso 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#topo">Congresso 2027</a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#presidente">Presidente</a>
+      <a href="#camara">Câmara</a>
+      <a href="#senado">Senado</a>
+      <a href="#governadores">Governadores</a>
+      <a href="#poderes">Três Poderes</a>
+      <a href="#quoruns">Quóruns</a>
+      <a href="#simulador">Simulador</a>
+      <a href="#processos">Tramitação</a>
+      <a href="#cronograma">Cronograma</a>
+      <a href="#fontes">Fontes</a>
+    </nav>
+    <button class="theme-btn" id="themeBtn" type="button" aria-label="Alternar tema claro e escuro">tema</button>
+  </div>
+</header>
+
+<main id="topo">
+<section class="hero">
+  <div class="wrap">
+    <div class="stamp eyebrow"><i></i> Eleições 2026 · dados do 1º turno · 12 out 2026</div>
+    <div class="hero-head">
+      <h1>Nenhum campo chega sozinho. <em>O centrão decide.</em></h1>
+      <p class="lede" id="heroLede"></p>
+    </div>
+
+    <div class="hemi-card">
+      <div class="hemi-box" id="hemiBox">
+        <svg id="hemi" viewBox="0 0 1000 510" role="img" aria-label="Hemiciclo com as 513 cadeiras da Câmara dos Deputados eleita em 2026, coloridas por bloco político"></svg>
+        <div class="hemi-center"><b>513</b><span>deputados federais<br>legislatura 2027</span></div>
+      </div>
+      <div class="legend" id="hemiLegend"></div>
+    </div>
+
+    <div class="strip" id="strip"></div>
+  </div>
+</section>
+
+<!-- ============ PRESIDENTE ============ -->
+<section class="s" id="presidente">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Executivo federal</span>
+      <h2>Flávio Bolsonaro e Lula decidem no dia 25</h2>
+      <p>O 1º turno terminou com diferença de 1,87 ponto percentual. O vencedor toma posse em 5 de janeiro de 2027 e indica os próximos ministros do STF.</p>
+    </div>
+    <div class="grid2 wide-l">
+      <div class="card">
+        <h3>1º turno, votos válidos</h3>
+        <p class="sub">100% das seções totalizadas em 5/out às 2h58.</p>
+        <div class="bars tall" id="presBars"></div>
+        <p class="note"><b>Comparecimento:</b> 125,28 milhões de eleitores. Abstenção de 21,08% (33,47 milhões). Brancos 2,30 milhões e nulos 3,67 milhões.</p>
+      </div>
+      <div class="card">
+        <h3>Datafolha, 2º turno</h3>
+        <p class="sub">6 a 8 de outubro. Margem de erro de 2 pontos. Empate técnico.</p>
+        <div class="duel" id="duel"></div>
+        <p class="note">Nos votos totais: Flávio 49%, Lula 45%, brancos, nulos ou nenhum 5%, indecisos 1%. A pesquisa mede intenção de voto, não prevê o resultado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CÂMARA ============ -->
+<section class="s" id="camara">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Legislativo · Câmara dos Deputados</span>
+      <h2>PL tem a maior bancada de um partido desde 1990</h2>
+      <p>São 121 deputados do PL, 23,6% da Casa. Somados, os partidos do centrão têm 246 cadeiras, 48,0% do plenário. Para chegar a 257 votos, a direita (132) precisa de 125 deputados do centrão e a esquerda (124) precisa de 133. Nenhum campo chega lá sem ele.</p>
+    </div>
+
+    <div class="card" style="margin-bottom:24px">
+      <h3>Régua de votos na Câmara</h3>
+      <p class="sub">Cada tracejado é um quórum. Passe o mouse sobre os blocos para ver a contagem.</p>
+      <div class="ruler" id="rulerC"></div>
+      <div class="rlegend" id="rlegC"></div>
+    </div>
+
+    <div class="grid2 wide-l">
+      <div class="card">
+        <h3>Bancadas por partido</h3>
+        <p class="sub">Deputados eleitos em 2026, com % da Câmara. Passe o mouse para destacar as cadeiras no hemiciclo.</p>
+        <div class="bars" id="partyBarsC"></div>
+        <p class="note">Federações aparecem somadas na imprensa: Brasil da Esperança (PT, PCdoB, PV) 88; União Progressista (União, PP) 87; PSOL e Rede 15; PSDB e Cidadania 11; PRD e Solidariedade 7.</p>
+      </div>
+      <div style="display:grid; gap:24px; min-width:0">
+        <div class="card">
+          <h3>Renovação</h3>
+          <p class="sub">Como a Casa mudou.</p>
+          <div class="bars" id="renov"></div>
+          <p class="note">Nikolas Ferreira (PL-MG) fez 3,11 milhões de votos, a maior votação da história. Erika Hilton (PSOL-SP) foi a deputada mais votada, com 1,60 milhão.</p>
+        </div>
+        <div class="card">
+          <h3>Quem ganhou e quem perdeu cadeiras</h3>
+          <p class="sub">Variação de 2022 para 2026 nos partidos com dado publicado.</p>
+          <div class="bars" id="deltaBars"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid2" style="margin-top:24px">
+      <div class="card">
+        <h3>Espectro segundo o Poder360</h3>
+        <p class="sub">Outra classificação: direita, centro e esquerda, 2022 contra 2026.</p>
+        <div class="bars" id="spectrum"></div>
+        <p class="note">Esta divisão difere da usada no resto da página, que isola o centrão como bloco próprio. Por isso os números não se somam entre as duas.</p>
+      </div>
+      <div class="card">
+        <h3>Como esta página define os blocos</h3>
+        <p class="sub">Classificação editorial e aproximada. Use o simulador para montar sua própria.</p>
+        <div class="plist" id="blocDefs" style="gap:12px"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SENADO ============ -->
+<section class="s" id="senado">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Legislativo · Senado Federal</span>
+      <h2>PL chega a 28 senadores, mas precisa de 49 para uma PEC</h2>
+      <p>Foram renovadas 54 das 81 cadeiras. A projeção para fevereiro de 2027 soma os eleitos agora e os 27 senadores eleitos em 2022. O PL elegeu 19 de 54 e passa a ter 34,6% da Casa.</p>
+    </div>
+    <div class="card" style="margin-bottom:24px">
+      <h3>Régua de votos no Senado</h3>
+      <p class="sub">Composição projetada para 2027.</p>
+      <div class="ruler" id="rulerS"></div>
+      <div class="rlegend" id="rlegS"></div>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Eleitos em 2026</h3>
+        <p class="sub">54 vagas. PL, MDB e PT somam 32, ou 59,3% das vagas.</p>
+        <div class="bars" id="senNew"></div>
+        <p class="note"><b>Renovação:</b> 32 senadores tentaram a reeleição e 14 venceram. Em 40 das 54 vagas (74,1%) o titular muda. Amazonas e Sergipe mantiveram os dois senadores.</p>
+      </div>
+      <div class="card">
+        <h3>Composição em fevereiro de 2027</h3>
+        <p class="sub">81 cadeiras: eleitos em 2026 e mantidos de 2022.</p>
+        <div class="bars" id="senTot"></div>
+        <div class="legend"><span><i class="sw" style="--c:var(--ink)"></i>Eleitos em 2026</span><span><i class="sw" style="--c:var(--ink3)"></i>Mantidos de 2022 (derivado)</span></div>
+        <p class="note"><b>Pode mudar.</b> Alan Rick, Omar Aziz e Professora Dorinha são senadores e disputam governo no 2º turno. A situação de Deltan Dallagnol (Novo-PR) depende de decisão do TSE. Mantidos de 2022 = total projetado menos eleitos em 2026.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GOVERNADORES ============ -->
+<section class="s" id="governadores">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Executivo estadual</span>
+      <h2>PL elege 6 governadores e disputa mais um em 25 de outubro</h2>
+      <p>21 estados já têm governador definido e 6 vão ao 2º turno. Três resultados ainda dependem da Justiça Eleitoral: Amapá, Roraima e Rio de Janeiro (percentual recalculado).</p>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Mapa em blocos</h3>
+        <p class="sub">Cada quadrado é um estado. Tracejado: 2º turno. Clique para ver os detalhes.</p>
+        <div class="tiles" id="tiles"></div>
+        <div class="legend" id="govLegend"></div>
+        <div class="callout detail" id="detail" style="margin-top:16px" aria-live="polite"></div>
+      </div>
+      <div style="display:grid; gap:24px; min-width:0">
+        <div class="card">
+          <h3>Governadores definidos, por partido</h3>
+          <p class="sub">21 estados. Percentual sobre os definidos.</p>
+          <div class="bars" id="govBars"></div>
+          <div class="stack" id="govStack" style="margin-top:14px"></div>
+        </div>
+        <div class="card">
+          <h3>2º turno em 25 de outubro</h3>
+          <p class="sub">Seis estados.</p>
+          <div id="runoffs" class="plist" style="gap:10px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRÊS PODERES ============ -->
+<section class="s" id="poderes">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Os Três Poderes</span>
+      <h2>Quem ocupa cada Poder em 2027</h2>
+      <p>Executivo e Legislativo saem das urnas. O Judiciário muda por indicação do presidente eleito e aprovação do Senado.</p>
+    </div>
+    <div class="powers" id="powers"></div>
+  </div>
+</section>
+
+<!-- ============ QUÓRUNS ============ -->
+<section class="s" id="quoruns">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Cotação de votos</span>
+      <h2>Quantos votos cada decisão exige</h2>
+      <p>Valores para as 513 cadeiras da Câmara e as 81 do Senado. A coluna de bloqueio mostra quantos votos contrários impedem a aprovação. “Faltam” indica quantos votos do centrão (e dos demais) o bloco precisa conquistar para chegar ao quórum, supondo que todos os seus parlamentares votem juntos.</p>
+    </div>
+    <div class="tw"><table id="qTable"></table></div>
+    <p class="note">Quórums vêm da Constituição Federal e da Lei 1.079/1950. O regimento de cada Casa e decisões do STF detalham o rito. Em maioria simples o mínimo depende de quantos estão presentes.</p>
+  </div>
+</section>
+
+<!-- ============ SIMULADOR ============ -->
+<section class="s" id="simulador">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Simulador</span>
+      <h2>Monte uma maioria e veja o que ela aprova</h2>
+      <p>Escolha partidos ou use um atalho. O cenário inicial, Direita mais Centrão, é só um exemplo. Os números supõem votos unânimes dentro de cada partido, o que raramente acontece.</p>
+    </div>
+    <div class="card sim-controls">
+      <div class="presets" id="presets" role="group" aria-label="Atalhos de cenário"></div>
+      <div class="pchips" id="pchips" role="group" aria-label="Partidos"></div>
+    </div>
+    <div class="sim-out" style="margin-top:16px">
+      <div class="card"><h3>Câmara</h3><div class="big num" id="simC"></div><div class="ruler" id="simRulerC"></div><ul class="res" id="resC"></ul></div>
+      <div class="card"><h3>Senado</h3><div class="big num" id="simS"></div><div class="ruler" id="simRulerS"></div><ul class="res" id="resS"></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRAMITAÇÃO ============ -->
+<section class="s" id="processos">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Passo a passo</span>
+      <h2>Como uma PEC e um impeachment andam</h2>
+      <p>Os dois ritos mais pedidos em ano de transição de poder. Os passos têm ordem fixa.</p>
+    </div>
+    <div class="grid2">
+      <div class="card"><h3>PEC: mudança na Constituição</h3><p class="sub">Exige 308 deputados e 49 senadores, duas vezes cada.</p><ol class="flow" id="flowPec"></ol></div>
+      <div class="card"><h3>Impeachment do presidente</h3><p class="sub">Duas votações de 2/3: 342 deputados e 54 senadores.</p><ol class="flow" id="flowImp"></ol></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRONOGRAMA ============ -->
+<section class="s" id="cronograma">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Cronograma</span>
+      <h2>Do 2º turno à renovação do STF</h2>
+      <p>Datas eleitorais confirmadas pelo calendário do TSE e pela imprensa. Aposentadorias do STF aparecem pelo ano, pois as fontes não trazem o dia exato.</p>
+    </div>
+    <div class="filters" id="filters" role="group" aria-label="Filtrar cronograma"></div>
+    <ul class="tl" id="tl"></ul>
+  </div>
+</section>
+
+<!-- ============ FONTES ============ -->
+<section class="s" id="fontes">
+  <div class="wrap">
+    <div class="s-head">
+      <span class="eyebrow">Fontes e ressalvas</span>
+      <h2>De onde vêm os números</h2>
+    </div>
+    <div class="grid2">
+      <div class="card">
+        <h3>Ressalvas</h3>
+        <p class="sub">O que ainda pode mudar.</p>
+        <div class="plist" style="gap:10px;font-size:.88rem">
+          <p>Os dados são do 1º turno e foram reunidos de reportagens de 12/out/2026. A fonte oficial é o TSE.</p>
+          <p>A composição do Senado em 2027 é uma projeção da imprensa. Mudam se os senadores que disputam governo vencerem, e conforme a decisão do TSE sobre o Paraná.</p>
+          <p>Fontes divergem em casos pontuais, como o partido de Marcelo Castro (PI). Esta página adota MDB, que fecha 54 eleitos e coincide com o Congresso em Foco.</p>
+          <p>Os blocos Esquerda, Centrão e Direita são editoriais. O Centrão aqui inclui PSD, MDB, Podemos, União, PP, Republicanos, PRD, Avante e Solidariedade.</p>
+          <p>Percentuais de governadores marcados com “n/i” não foram informados nas fontes.</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Links consultados</h3>
+        <p class="sub">Abrem em nova aba.</p>
+        <ul class="src" id="src"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>Congresso 2027</b> reúne informação pública sobre as eleições brasileiras de 2026. Não é material oficial da Justiça Eleitoral nem de campanha.</p>
+    <p>Código aberto em HTML, CSS e JavaScript, sem bibliotecas externas.</p>
+  </div>
+</footer>
+
+<div class="tip" id="tip" role="status"></div>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
